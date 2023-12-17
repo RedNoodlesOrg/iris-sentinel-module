@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "iris-sentinel-module"
+version = "0.1.0"
+description = "`iris-sentinel-module` is a IRIS pipeline/processor module created with https://github.com/dfir-iris/iris-skeleton-module"
+authors = ["Fakeapate <imboden.samuel@protonmail.ch>"]
+license = "LICENSE"
+readme = "README.md"
+packages = [{include = "iris_sentinel_module"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
