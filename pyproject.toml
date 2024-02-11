@@ -5,11 +5,16 @@ description = "`iris-sentinel-module` is a IRIS pipeline/processor module create
 authors = ["Fakeapate <imboden.samuel@protonmail.ch>"]
 license = "LICENSE"
 readme = "README.md"
-packages = [{include = "iris_sentinel_module"}]
+packages = [{include = "iris_sentinel_module"}, {include = "iris_sentinel_module/sentinel_handler"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
 
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.0.3"
+mypy = "^1.7.1"
+autopep8 = "^2.0.4"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,12 +1,11 @@
-#!/usr/bin/env python3
-#
-#
-#  IRIS sentinel Source Code
-#  Copyright (C) 2023 - RedNoodles
-#  sam@rednoodles.bid
-#  Created by RedNoodles - 2023-12-17
-#
-#  License MIT
+"""
+  IRIS sentinel Source Code
+  Copyright (C) 2023 - RedNoodles
+  sam@rednoodles.bid
+  Created by RedNoodles - 2023-12-17
+
+  License MIT
+"""
 
 import hashlib
 import shutil
@@ -38,17 +37,8 @@ class SentinelHandler(object):
         """
         Returns an sentinel API instance depending if the key is premium or not
 
-        :return: { cookiecutter.keyword }} Instance
+        :return: sentinel Instance
         """
-        url = self.mod_config.get('sentinel_url')
-        key = self.mod_config.get('sentinel_key')
-        proxies = {}
-
-        if self.server_config.get('http_proxy'):
-            proxies['https'] = self.server_config.get('HTTPS_PROXY')
-
-        if self.server_config.get('https_proxy'):
-            proxies['http'] = self.server_config.get('HTTP_PROXY')
 
         # TODO!
         # Here get your sentinel instance and return it
@@ -101,7 +91,7 @@ class SentinelHandler(object):
                             is_valid = True
                             # TODO!
                             # Here detect if the files are suited for this module (e.g EVTX files for EVTX module)
-                            if entry.suffix == ".txt":
+                            if entry.suffix == ".csv":
 
                                 if "<TODO>" not in import_list:
                                     import_list["<TODO>"] = [entry]

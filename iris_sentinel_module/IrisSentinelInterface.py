@@ -1,12 +1,11 @@
-#!/usr/bin/env python3
-#
-#
-#  IRIS sentinel Source Code
-#  Copyright (C) 2023 - RedNoodles
-#  sam@rednoodles.bid
-#  Created by RedNoodles - 2023-12-17
-#
-#  License MIT
+"""
+  IRIS sentinel Source Code
+  Copyright (C) 2023 - RedNoodles
+  sam@rednoodles.bid
+  Created by RedNoodles - 2023-12-17
+
+  License MIT
+"""
 
 import traceback
 from pathlib import Path
@@ -30,10 +29,9 @@ class IrisSentinelInterface(IrisModuleInterface):
     _pipeline_support = interface_conf.pipeline_support
     _pipeline_info = interface_conf.pipeline_info
     _module_configuration = interface_conf.module_configuration
-    
+
     _module_type = IrisModuleTypes.module_pipeline
-    
-    
+
     def pipeline_handler(self, pipeline_type, pipeline_data):
         """
         Receive data from the main pipeline and dispatch to sentinel handler
@@ -98,4 +96,3 @@ class IrisSentinelInterface(IrisModuleInterface):
         except Exception as e:
             traceback.print_exc()
             return InterfaceStatus.I2Error(logs=[traceback.print_exc()])
-     
